@@ -1,0 +1,1527 @@
+<!DOCTYPE html>
+
+<html lang="fr">
+
+    <head>
+
+        <title>Le Monde.fr - Actualités et Infos en France et dans le monde</title>
+        
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css">
+        <link rel="stylesheet" href="css/style.css">
+
+        <!--TODO link staticly-->
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+        <script src="js/prescript.js"></script>
+
+        <!--fonts-->
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Roboto+Condensed:ital,wght@0,500;1,500&display=swap" rel="stylesheet">
+
+    </head>
+    
+    <body>
+        
+
+        <!-- header for small-medium size screen -->
+        <header class="d-block">
+
+            <div id="Language" class="d-none d-lg-flex flex-row align-middle justify-content-center text-uppercase z-3"> <!-- rem *0.63 -->
+
+                <a class="n-link fw-bold lang" >Français</a> 
+
+                <div class="spacer h-25"></div>
+                
+                <a class="n-link lang"> English</a>
+
+            </div>
+
+            <div id="Title" class="d-none d-lg-flex flex-row m-auto justify-content-center z-3">
+                
+                <!-- TitleLeft -->
+                <div class="d-flex align-items-end w-100">
+
+                    <img src="images/journal.png" id="Journal">
+
+                    <a id="ConsulterLeJournal">
+                        <!-- #TODO add image -->
+                        <p>Consulter <br> 
+                        le journal</p>
+
+                    </a>
+
+                </div>
+
+                <!-- TitleCenter -->
+                <div class="d-flex align-items-start">
+
+                    <a href="#">
+
+                        <img src="images/logo.png" id="Logo">
+                    
+                    </a>
+
+                </div>
+
+                <!-- TitleRight -->
+                <div class="d-flex flex-end justify-content-end align-items-end w-100">
+
+                    <div id="SingInLine">
+
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-person-circle d-inline" viewBox="0 0 16 16">
+                            <path d="M11 6a3 3 0 1 1-6 0 3 3 0 0 1 6 0"/>
+                            <path fill-rule="evenodd" d="M0 8a8 8 0 1 1 16 0A8 8 0 0 1 0 8m8-7a7 7 0 0 0-5.468 11.37C3.242 11.226 4.805 10 8 10s4.757 1.225 5.468 2.37A7 7 0 0 0 8 1"/>
+                        </svg>
+
+                        <a id="connecter" class="d-inline"> Se connecter </a> 
+                        
+                        <div class="spacer"></div>  <!--#TODO fix-->                 
+                        
+                        <button id="abonner-btn" class="btn d-inline"> S'abonner </button>
+                        
+                    </div>
+
+                </div>
+
+            </div>
+
+            <!-- #TODO add collapsable menu -->
+            <!-- nav for small/medium screens -->
+            <div class="navbar fixed-top border-0 border-bottom d-flex d-lg-none flex-row overflow-hidden justify-content-start flex-nowrap"> <!-- TODO fix under xs overflow-->
+                <a class="mx-3 d-flex flex-shrink-0 align-middle">
+                    
+                    <svg id="NavList" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="#2a303b" class="bi bi-list" viewBox="0 0 16 16">
+                        <path fill-rule="evenodd" d="M2.5 12a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5m0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5m0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5"/>
+                    </svg>
+                    
+                </a>
+                
+                <a href="#" class="d-flex flex-shrink-0 align-middle">
+                    
+                    <img src="images/logo.png" class="d-flex" height="28px">
+                    
+                </a>
+                
+                
+                <div class="d-flex mx-3 overflow-hidden  flex-shrink-0 flex-grow-1 justify-content-end align-middle">
+                    
+                    <div class="d-flex align-middle me-2">
+                        
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="d-flex my-auto bi bi-person-circle" viewBox="0 0 16 16">
+                            <path d="M11 6a3 3 0 1 1-6 0 3 3 0 0 1 6 0"/>
+                            <path fill-rule="evenodd" d="M0 8a8 8 0 1 1 16 0A8 8 0 0 1 0 8m8-7a7 7 0 0 0-5.468 11.37C3.242 11.226 4.805 10 8 10s4.757 1.225 5.468 2.37A7 7 0 0 0 8 1"/>
+                        </svg>
+                        
+                    </div>
+                    
+                    <a id="connecter" class="d-none d-sm-inline d-md-inline ms-0"> Se connecter </a> 
+                    
+                    <div class="spacer d-flex my-auto"></div>  <!--#TODO fix-->                 
+                    
+                    <button id="abonner-btn" class="btn d-flex my-auto"> S'abonner </button>
+                    
+                </div>
+                                    
+            </div>
+
+            <!-- nav for large screens but still visible for small one -->
+            <div id="MenuBar" class="d-flex mw-100 w-100 overflow-visible">
+
+
+                <div class="w-100">
+
+                    <ul id="MenuList" class="mx-auto m-0 p-0 d-flex flex-row border-bottom" style="z-index: 3;">
+                        
+                        <li id="NavLogo" class="nav-item d-none">
+
+                            <a href="#" class="nav-link d-inline-block">
+
+                                <img src="images/logo.png" class="me-2 d-inline-block h-75 w-auto align-middle">
+                                
+                                <div class="ms-2 spacer"></div>
+
+                            </a>    
+
+                        </li>
+
+
+                        <li id="Home" class="nav-item d-flex flex-shrink-0 border-end w-auto">
+                            
+                            <a class="nav-link d-block m-auto" aria-current="page" href="#"> <!--style="padding: 1rem 1.25rem 1.25rem 1.25rem;"-->
+                                
+                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="#2a303b" class="bi bi-house-door-fill my-auto d-block" viewBox="0 0 16 16">
+                                    <path d="M6.5 14.5v-3.505c0-.245.25-.495.5-.495h2c.25 0 .5.25.5.5v3.5a.5.5 0 0 0 .5.5h4a.5.5 0 0 0 .5-.5v-7a.5.5 0 0 0-.146-.354L13 5.793V2.5a.5.5 0 0 0-.5-.5h-1a.5.5 0 0 0-.5.5v1.293L8.354 1.146a.5.5 0 0 0-.708 0l-6 6A.5.5 0 0 0 1.5 7.5v7a.5.5 0 0 0 .5.5h4a.5.5 0 0 0 .5-.5"/>
+                                </svg>
+                                
+                            </a>
+                            
+                        </li>
+                        
+                        
+                        <li class="nav-item d-flex d-lg-none flex-shrink-0 border-end h-100 w-auto">
+                            
+                            <a class="nav-link d-block m-auto" aria-current="page" href="#">
+                                
+                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="#2a303b" class="bi bi-clock" viewBox="0 0 16 16">
+                                    <path d="M8 3.5a.5.5 0 0 0-1 0V9a.5.5 0 0 0 .252.434l3.5 2a.5.5 0 0 0 .496-.868L8 8.71z"/>
+                                    <path d="M8 16A8 8 0 1 0 8 0a8 8 0 0 0 0 16m7-8A7 7 0 1 1 1 8a7 7 0 0 1 14 0"/>
+                                </svg>
+                            </a>
+                            
+                        </li>
+                        
+                        <li class="nav-item d-flex flex-shrink-0 h-100 w-auto align-middle">
+                            
+                            <a id="ActualitesMenuBtn" class="nav-link d-block text-uppercase px-2">Actualités</a>
+                            
+                            <svg xmlns="http://www.w3.org/2000/svg" width="10" height="10" fill="currentColor" class="bi bi-chevron-down" viewBox="0 0 16 16">
+                                <path fill-rule="evenodd" d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708"/>
+                            </svg>
+                            
+                        </li>
+                        
+                        
+                        
+                        <li class="nav-item d-flex flex-shrink-0 h-100 w-auto">
+                            
+                            <a id="EconomieMenuBtn" class="nav-link d-block text-uppercase px-2">Économie</a>
+                            
+                            <svg xmlns="http://www.w3.org/2000/svg" width="10" height="10" fill="currentColor" class="bi bi-chevron-down" viewBox="0 0 16 16">
+                                <path fill-rule="evenodd" d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708"/>
+                            </svg>
+                            
+                        </li>
+                        
+                        <li class="nav-item d-flex flex-shrink-0 h-100 w-auto">
+                            
+                            <a id="VideosMenuBtn" class="nav-link d-block text-uppercase px-2">Vidéos</a>
+                            
+                            <svg xmlns="http://www.w3.org/2000/svg" width="10" height="10" fill="currentColor" class="bi bi-chevron-down" viewBox="0 0 16 16">
+                                <path fill-rule="evenodd" d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708"/>
+                            </svg>
+                            
+                        </li>
+                        
+                        <li class="nav-item d-flex flex-shrink-0 h-100 w-auto">
+                            
+                        <a id="DebatsMenuBtn" class="nav-link d-block text-uppercase px-2">Débats</a>
+                        
+                        <svg xmlns="http://www.w3.org/2000/svg" width="10" height="10" fill="currentColor" class="bi bi-chevron-down" viewBox="0 0 16 16">
+                            <path fill-rule="evenodd" d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708"/>
+                        </svg>
+                        
+                        </li>
+
+                        <li class="nav-item d-flex flex-shrink-0 h-100 w-auto">
+                            
+                            <a id="CultureMenuBtn" class="nav-link d-block text-uppercase px-2"> Culture </a>
+                            
+                            <svg xmlns="http://www.w3.org/2000/svg" width="10" height="10" fill="currentColor" class="bi bi-chevron-down" viewBox="0 0 16 16">
+                                <path fill-rule="evenodd" d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708"/>
+                            </svg>
+                            
+                        </li>
+                        
+                        <li class="nav-item d-flex flex-shrink-0 h-100 w-auto">
+                            
+                            <a id="LeGoutDuMondeMenuBtn" class="nav-link d-block text-uppercase px-2"> Le Goût du monde </a>
+                            
+                            <svg xmlns="http://www.w3.org/2000/svg" width="10" height="10" fill="currentColor" class="bi bi-chevron-down" viewBox="0 0 16 16">
+                                <path fill-rule="evenodd" d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708"/>
+                            </svg>
+                            
+                        </li>
+                        
+                        <li class="nav-item d-flex flex-shrink-0 h-100 w-auto">
+                            
+                            <a id="ServicesMenuBtn" class="nav-link d-block text-uppercase px-2"> Services </a>
+                            
+                            <svg xmlns="http://www.w3.org/2000/svg" width="10" height="10" fill="currentColor" class="bi bi-chevron-down" viewBox="0 0 16 16">
+                                <path fill-rule="evenodd" d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708"/>
+                            </svg>
+                            
+                        </li>
+                        
+                        
+                        <li id="NavSearch" class="nav-item d-flex">
+                            
+                            <a class="nav-link d-flex text-uppercase" href="#">
+                                
+                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-search" viewBox="0 0 16 16">
+                                    <path d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001q.044.06.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1 1 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0"/>
+                                </svg>
+                                
+                            </a>
+                            
+                        </li>
+
+                        <li id="NavLogin" class="nav-item d-none">
+
+                            <div id="SingInLine" class="nav-link py-auto">                            
+
+                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-person-circle d-inline" viewBox="0 0 16 16">
+                                    <path d="M11 6a3 3 0 1 1-6 0 3 3 0 0 1 6 0"/>
+                                    <path fill-rule="evenodd" d="M0 8a8 8 0 1 1 16 0A8 8 0 0 1 0 8m8-7a7 7 0 0 0-5.468 11.37C3.242 11.226 4.805 10 8 10s4.757 1.225 5.468 2.37A7 7 0 0 0 8 1"/>
+                                </svg>
+                                
+                                <div class="spacer ms-2 me-2"></div>                 
+                                
+                                <button id="abonner-btn" class="btn d-inline"> S'abonner </button>
+
+                            </div>
+
+                        </li>
+                    
+                    </ul>
+            
+                    <div id="DropDownMenu" class="d-block position-absolute w-100 overflow-scroll">
+                
+                        <div id="ActualitesMenu" class="my-dropdown-menu d-none my-0">
+                                    
+                            <div class="row">
+                
+                                <div class="col-0 col-sm-3 d-none d-sm-flex row h-100">
+                
+                                    <div class="col-12 text-uppercase h5">  
+                                        En ce moment  
+                                    </div> 
+                
+                                    <div class="col-12 row">
+                
+                                        <a class="d-inline-block m-1 btn w-auto border btn-actualites"> Guerre en Ukraine </a>
+                                        <a class="d-inline-block m-1 btn w-auto border btn-actualites"> Guerre Israël-Hamas </a>
+                                        <a class="d-inline-block m-1 btn w-auto border btn-actualites"> Élections européennes 2024 </a>
+                                        <a class="d-inline-block m-1 btn w-auto border btn-actualites"> Élection présidentielle américaine 2024 </a>
+                                        <a class="d-inline-block m-1 btn w-auto border btn-actualites"> Projet Overdose </a>
+                                        <a class="d-inline-block m-1 btn w-auto border btn-actualites"> Gouvernement Attal </a>
+                                        <a class="d-inline-block m-1 btn w-auto border btn-actualites"> Crise du logement </a>
+                                        <a class="d-inline-block m-1 btn w-auto border btn-actualites"> Climat </a>
+                                        <a class="d-inline-block m-1 btn w-auto border btn-actualites"> Jeux olympiques de Paris 2024 </a>
+                                        <a class="d-inline-block m-1 btn w-auto border btn-actualites"> Toute l’actualité en continu </a>
+                
+                                    </div>
+                
+                                </div>
+                            
+                                <div class="col-12 col-sm-9 row h-100 flex-wrap">  
+                                    
+                                    <div class="col-12 text-uppercase h5 p-0 ps-4"> Actualités </div>  
+                                            
+                                    <div class="col-6 col-sm-6 col-md-6 col-lg-4 p-0 ps-4 pt-2 pe-4 flex-nowrap"> 
+                                        <a href="#" class="d-block text-decoration-none border-bottom w-100 pb-2" style="color:#2a303b; font-size:1.2rem;">International</a> 
+                                    </div>
+                                    <div class="col-6 col-sm-6 col-md-6 col-lg-4 p-0 ps-4 pt-2 pe-4 flex-nowrap"> 
+                                        <a href="#" class="d-block text-decoration-none border-bottom w-100 pb-2" style="color:#2a303b; font-size:1.2rem;">Podivtique</a> 
+                                    </div>
+                                    <div class="col-6 col-sm-6 col-md-6 col-lg-4 p-0 ps-4 pt-2 pe-4 flex-nowrap"> 
+                                        <a href="#" class="d-block text-decoration-none border-bottom w-100 pb-2" style="color:#2a303b; font-size:1.2rem;">Société</a> 
+                                    </div>
+                                    <div class="col-6 col-sm-6 col-md-6 col-lg-4 p-0 ps-4 pt-2 pe-4 flex-nowrap"> 
+                                        <a href="#" class="d-block text-decoration-none border-bottom w-100 pb-2" style="color:#2a303b; font-size:1.2rem;">Planète</a> 
+                                    </div>
+                                    <div class="col-6 col-sm-6 col-md-6 col-lg-4 p-0 ps-4 pt-2 pe-4 flex-nowrap"> 
+                                        <a href="#" class="d-block text-decoration-none border-bottom w-100 pb-2" style="color:#2a303b; font-size:1.2rem;">Climat</a> 
+                                    </div>
+                                    <div class="col-6 col-sm-6 col-md-6 col-lg-4 p-0 ps-4 pt-2 pe-4 flex-nowrap"> 
+                                        <a href="#" class="d-block text-decoration-none border-bottom w-100 pb-2" style="color:#2a303b; font-size:1.2rem;">Le Monde Afrique</a> 
+                                    </div>
+                                    <div class="col-6 col-sm-6 col-md-6 col-lg-4 p-0 ps-4 pt-2 pe-4 flex-nowrap"> 
+                                        <a href="#" class="d-block text-decoration-none border-bottom w-100 pb-2" style="color:#2a303b; font-size:1.2rem;">Les Décodeurs</a> 
+                                    </div>
+                                    <div class="col-6 col-sm-6 col-md-6 col-lg-4 p-0 ps-4 pt-2 pe-4 flex-nowrap"> 
+                                        <a href="#" class="d-block text-decoration-none border-bottom w-100 pb-2" style="color:#2a303b; font-size:1.2rem;">Sport</a> 
+                                    </div>
+                                    <div class="col-6 col-sm-6 col-md-6 col-lg-4 p-0 ps-4 pt-2 pe-4 flex-nowrap"> 
+                                        <a href="#" class="d-block text-decoration-none border-bottom w-100 pb-2" style="color:#2a303b; font-size:1.2rem;">Education</a> 
+                                    </div>
+                                    <div class="col-6 col-sm-6 col-md-6 col-lg-4 p-0 ps-4 pt-2 pe-4 flex-nowrap"> 
+                                        <a href="#" class="d-block text-decoration-none border-bottom w-100 pb-2" style="color:#2a303b; font-size:1.2rem;">M Campus</a> 
+                                    </div>
+                                    <div class="col-6 col-sm-6 col-md-6 col-lg-4 p-0 ps-4 pt-2 pe-4 flex-nowrap"> 
+                                        <a href="#" class="d-block text-decoration-none border-bottom w-100 pb-2" style="color:#2a303b; font-size:1.2rem;">Santé</a> 
+                                    </div>
+                                    <div class="col-6 col-sm-6 col-md-6 col-lg-4 p-0 ps-4 pt-2 pe-4 flex-nowrap"> 
+                                        <a href="#" class="d-block text-decoration-none border-bottom w-100 pb-2" style="color:#2a303b; font-size:1.2rem;">Intimités</a> 
+                                    </div>
+                                    <div class="col-6 col-sm-6 col-md-6 col-lg-4 p-0 ps-4 pt-2 pe-4 flex-nowrap"> 
+                                        <a href="#" class="d-block text-decoration-none border-bottom w-100 pb-2" style="color:#2a303b; font-size:1.2rem;">Sciences</a> 
+                                    </div>
+                                    <div class="col-6 col-sm-6 col-md-6 col-lg-4 p-0 ps-4 pt-2 pe-4 flex-nowrap"> 
+                                        <a href="#" class="d-block text-decoration-none border-bottom w-100 pb-2" style="color:#2a303b; font-size:1.2rem;">Pixels</a> 
+                                    </div>
+                                    <div class="col-6 col-sm-6 col-md-6 col-lg-4 p-0 ps-4 pt-2 pe-4 flex-nowrap"> 
+                                        <a href="#" class="d-block text-decoration-none border-bottom w-100 pb-2" style="color:#2a303b; font-size:1.2rem;">Disparitions</a> 
+                                    </div>
+                                    <div class="col-6 col-sm-6 col-md-6 col-lg-4 p-0 ps-4 pt-2 pe-4 flex-nowrap"> 
+                                        <a href="#" class="d-block text-decoration-none border-bottom w-100 pb-2" style="color:#2a303b; font-size:1.2rem;">Le Fil Good</a> 
+                                    </div>
+                                    <div class="col-6 col-sm-6 col-md-6 col-lg-4 p-0 ps-4 pt-2 pe-4 flex-nowrap"> 
+                                        <a href="#" class="d-block text-decoration-none border-bottom w-100 pb-2" style="color:#2a303b; font-size:1.2rem;">Podcasts</a> 
+                                    </div>
+                                    <div class="col-6 col-sm-6 col-md-6 col-lg-4 p-0 ps-4 pt-2 pe-4 flex-nowrap"> 
+                                        <a href="#" class="d-block text-decoration-none border-bottom w-100 pb-2" style="color:#2a303b; font-size:1.2rem;">Le Monde &amp; Vous</a> 
+                                    </div>
+                                                                        
+                                </div>
+                        
+                            </div>
+                            
+                        </div>
+                
+                        <div id="EconomieMenu" class="container-fluid my-dropdown-menu d-none my-0">
+                                    
+                            <div class="d-flex">
+    
+                                <div class="d-flex flex-column flex-shrink-0 flex-grow-1 dropdown-list">
+                                    
+                                    <div class="d-flex p-0 pt-2 flex-nowrap" > 
+                                        <a href="#" class="d-block text-uppercase text-decoration-none border-bottom w-100 pb-2" style="color:#2a303b; font-size:1.2rem;"> Économie </a> 
+                                    </div>
+    
+                                    <div class="d-flex p-0 pt-2 flex-nowrap" > 
+                                        <a href="#" class="d-block text-decoration-none border-bottom w-100 pb-2" style="color:#2a303b; font-size:1.2rem;"> Économie mondiale </a> 
+                                    </div>
+    
+                                    <div class="d-flex p-0 pt-2 flex-nowrap" > 
+                                        <a href="#" class="d-block text-decoration-none border-bottom w-100 pb-2" style="color:#2a303b; font-size:1.2rem;"> Économie française </a> 
+                                    </div>
+    
+                                    <div class="d-flex p-0 pt-2 flex-nowrap" > 
+                                        <a href="#" class="d-block text-decoration-none border-bottom w-100 pb-2" style="color:#2a303b; font-size:1.2rem;"> Médias </a> 
+                                    </div>
+    
+                                    <div class="d-flex p-0 pt-2 flex-nowrap" > 
+                                        <a href="#" class="d-block text-decoration-none border-bottom w-100 pb-2" style="color:#2a303b; font-size:1.2rem;"> Emploi </a> 
+                                    </div>
+    
+                                    <div class="d-flex p-0 pt-2 flex-nowrap" > 
+                                        <a href="#" class="d-block text-decoration-none border-bottom w-100 pb-2" style="color:#2a303b; font-size:1.2rem;"> Argent & placements </a> 
+                                    </div>
+    
+                                    <div class="d-flex p-0 pt-2 flex-nowrap" > 
+                                        <a href="#" class="d-block text-decoration-none border-bottom w-100 pb-2" style="color:#2a303b; font-size:1.2rem;"> Tribunes éco </a> 
+                                    </div>
+    
+                                    <div class="d-flex p-0 pt-2 flex-nowrap" > 
+                                        <a href="#" class="d-block text-decoration-none border-bottom w-100 pb-2" style="color:#2a303b; font-size:1.2rem;"> Cities </a> 
+                                    </div>
+    
+                                    <div class="d-flex p-0 pt-2 flex-nowrap" > 
+                                        <a href="#" class="d-block text-decoration-none border-bottom w-100 pb-2" style="color:#2a303b; font-size:1.2rem;"> Le Club de l’économie </a> 
+                                    </div>
+                                    
+                                </div>
+                            
+                                <div class="d-none d-sm-flex flex-fill">
+                                    
+                                    <div class="w-100 p-0 mx-auto row">
+
+                                        <div class="col-6 col-lg-3 p-0 px-3 mx-auto ">
+
+                                            <img class="image-filler w-100 mt-2 mb-1" />
+                                            <a class="title-filler h6 px-2">CHRONIQUE <br> </a>
+
+                                        </div>
+                                        
+                                        <div class="col-6 col-lg-3 p-0 px-3 mx-auto ">
+                                            
+                                            <img class="image-filler w-100 mt-2 mb-1" />
+                                            <a class="title-filler h6 px-2">ÉCONOMIE <br> </a>
+
+                                        </div>
+                                        
+                                        <div class="col-6 col-lg-3 p-0 px-3 mx-auto ">
+                                            
+                                            <img class="image-filler w-100 mt-2 mb-1" />
+                                            <a class="title-filler h6 px-2">CHRONIQUE <br> </a>
+
+                                        </div>
+                                        
+                                        <div class="col-6 col-lg-3 p-0 px-3 mx-auto">
+                                            
+                                            <img class="image-filler w-100 mt-2 mb-1" />
+                                            <a class="title-filler h6 px-2">TRIBUNE <br> </a>
+
+                                        </div>
+
+                                    </div>
+
+                                </div>
+    
+                            </div>
+    
+                        </div>
+    
+                        <div id="VideosMenu" class="my-dropdown-menu d-none my-0">
+                                    
+                            <div class="d-flex">
+    
+                                <div class="d-flex flex-column flex-shrink-0 flex-grow-1 dropdown-list">
+                                    
+                                    <div class="d-flex p-0 pt-2 flex-nowrap" > 
+                                        <a href="#" class="d-block text-uppercase text-decoration-none border-bottom w-100 pb-2" style="color:#2a303b; font-size:1.2rem;"> Vidéos </a> 
+                                    </div>
+    
+                                    <div class="d-flex p-0 pt-2 flex-nowrap" > 
+                                        <a href="#" class="d-block text-decoration-none border-bottom w-100 pb-2" style="color:#2a303b; font-size:1.2rem;"> L’actualité </a> 
+                                    </div>
+    
+                                    <div class="d-flex p-0 pt-2 flex-nowrap" > 
+                                        <a href="#" class="d-block text-decoration-none border-bottom w-100 pb-2" style="color:#2a303b; font-size:1.2rem;"> Les explications </a> 
+                                    </div>
+    
+                                    <div class="d-flex p-0 pt-2 flex-nowrap" > 
+                                        <a href="#" class="d-block text-decoration-none border-bottom w-100 pb-2" style="color:#2a303b; font-size:1.2rem;"> Enquêtes vidéo </a> 
+                                    </div>
+    
+                                    <div class="d-flex p-0 pt-2 flex-nowrap" > 
+                                        <a href="#" class="d-block text-decoration-none border-bottom w-100 pb-2" style="color:#2a303b; font-size:1.2rem;"> Les mini-séries </a> 
+                                    </div>
+    
+                                </div>
+                            
+                                <div class="d-none d-sm-flex flex-fill">
+                                    
+                                    <div class="w-100 p-0 mx-auto row">
+
+                                        <div class="col-6 col-lg-3 p-0 px-3 mx-auto ">
+
+                                            <img class="image-filler w-100 mt-2 mb-1" />
+                                            <a class="title-filler h6 px-2">INTERNATIONAL <br> </a>
+
+                                        </div>
+                                        
+                                        <div class="col-6 col-lg-3 p-0 px-3 mx-auto ">
+                                            
+                                            <img class="image-filler w-100 mt-2 mb-1" />
+                                            <a class="title-filler h6 px-2">INTERNATIONAL <br> </a>
+
+                                        </div>
+                                        
+                                        <div class="col-6 col-lg-3 p-0 px-3 mx-auto ">
+                                            
+                                            <img class="image-filler w-100 mt-2 mb-1" />
+                                            <a class="title-filler h6 px-2">SOCIÉTÉ <br> </a>
+
+                                        </div>
+                                        
+                                        <div class="col-6 col-lg-3 p-0 px-3 mx-auto">
+                                            
+                                            <img class="image-filler w-100 mt-2 mb-1" />
+                                            <a class="title-filler h6 px-2">CULTURE <br> </a>
+
+                                        </div>
+
+                                    </div>
+
+                                </div>
+
+                            </div>
+    
+                        </div>
+    
+                        <div id="DebatsMenu" class="my-dropdown-menu d-none my-0">
+                                    
+                            <div class="d-flex">
+    
+                                <div class="d-flex flex-column flex-shrink-0 flex-grow-1 dropdown-list">
+                                    
+                                    <div class="d-flex p-0 pt-2 flex-nowrap" > 
+                                        <a href="#" class="d-block text-uppercase text-decoration-none border-bottom w-100 pb-2" style="color:#2a303b; font-size:1.2rem;"> Débats </a> 
+                                    </div>
+    
+                                    <div class="d-flex p-0 pt-2 flex-nowrap" > 
+                                        <a href="#" class="d-block text-decoration-none border-bottom w-100 pb-2" style="color:#2a303b; font-size:1.2rem;"> Editoriaux </a> 
+                                    </div>
+    
+                                    <div class="d-flex p-0 pt-2 flex-nowrap" > 
+                                        <a href="#" class="d-block text-decoration-none border-bottom w-100 pb-2" style="color:#2a303b; font-size:1.2rem;"> Chroniques </a> 
+                                    </div>
+    
+                                    <div class="d-flex p-0 pt-2 flex-nowrap" > 
+                                        <a href="#" class="d-block text-decoration-none border-bottom w-100 pb-2" style="color:#2a303b; font-size:1.2rem;"> Enquêtes idées </a> 
+                                    </div>
+    
+                                    <div class="d-flex p-0 pt-2 flex-nowrap" > 
+                                        <a href="#" class="d-block text-decoration-none border-bottom w-100 pb-2" style="color:#2a303b; font-size:1.2rem;"> Notions </a> 
+                                    </div>
+    
+                                    <div class="d-flex p-0 pt-2 flex-nowrap" > 
+                                        <a href="#" class="d-block text-decoration-none border-bottom w-100 pb-2" style="color:#2a303b; font-size:1.2rem;"> Entretiens idées </a> 
+                                    </div>
+    
+                                    <div class="d-flex p-0 pt-2 flex-nowrap" > 
+                                        <a href="#" class="d-block text-decoration-none border-bottom w-100 pb-2" style="color:#2a303b; font-size:1.2rem;"> Analyses </a> 
+                                    </div>
+    
+                                    <div class="d-flex p-0 pt-2 flex-nowrap" > 
+                                        <a href="#" class="d-block text-decoration-none border-bottom w-100 pb-2" style="color:#2a303b; font-size:1.2rem;"> Tribunes </a> 
+                                    </div>
+                                                                        
+                                </div>
+                            
+                                <div class="d-none d-sm-flex flex-fill">
+                                    
+                                    <div class="w-100 p-0 mx-auto row">
+
+                                        <div class="col-6 col-lg-3 p-0 px-3 mx-auto ">
+
+                                            <img class="image-filler w-100 mt-2 mb-1" />
+                                            <a class="title-filler h6 px-2">ÉDITORIAL <br> </a>
+
+                                        </div>
+                                        
+                                        <div class="col-6 col-lg-3 p-0 px-3 mx-auto ">
+                                            
+                                            <img class="image-filler w-100 mt-2 mb-1" />
+                                            <a class="title-filler h6 px-2">CHRONIQUE <br> </a>
+
+                                        </div>
+                                        
+                                        <div class="col-6 col-lg-3 p-0 px-3 mx-auto ">
+                                            
+                                            <img class="image-filler w-100 mt-2 mb-1" />
+                                            <a class="title-filler h6 px-2">CHRONIQUE <br> </a>
+
+                                        </div>
+                                        
+                                        <div class="col-6 col-lg-3 p-0 px-3 mx-auto">
+                                            
+                                            <img class="image-filler w-100 mt-2 mb-1" />
+                                            <a class="title-filler h6 px-2">CHRONIQUE <br> </a>
+
+                                        </div>
+
+                                    </div>
+
+                                </div>
+    
+                            </div>
+    
+                        </div>
+    
+                        <div id="CultureMenu" class="my-dropdown-menu d-none my-0">
+                                    
+                            <div class="d-flex">
+    
+                                <div class="d-flex flex-column flex-shrink-0 flex-grow-1 dropdown-list">
+                                    
+                                    <div class="d-flex p-0 pt-2 flex-nowrap" > 
+                                        <a href="#" class="d-block text-uppercase text-decoration-none border-bottom w-100 pb-2" style="color:#2a303b; font-size:1.2rem;"> Culture </a> 
+                                    </div>
+    
+                                    <div class="d-flex p-0 pt-2 flex-nowrap" > 
+                                        <a href="#" class="d-block text-decoration-none border-bottom w-100 pb-2" style="color:#2a303b; font-size:1.2rem;"> Cinéma </a> 
+                                    </div>
+    
+                                    <div class="d-flex p-0 pt-2 flex-nowrap" > 
+                                        <a href="#" class="d-block text-decoration-none border-bottom w-100 pb-2" style="color:#2a303b; font-size:1.2rem;"> Télévision </a> 
+                                    </div>
+    
+                                    <div class="d-flex p-0 pt-2 flex-nowrap" > 
+                                        <a href="#" class="d-block text-decoration-none border-bottom w-100 pb-2" style="color:#2a303b; font-size:1.2rem;"> Le Monde des livres </a> 
+                                    </div>
+    
+                                    <div class="d-flex p-0 pt-2 flex-nowrap" > 
+                                        <a href="#" class="d-block text-decoration-none border-bottom w-100 pb-2" style="color:#2a303b; font-size:1.2rem;"> Musiques </a> 
+                                    </div>
+    
+                                    <div class="d-flex p-0 pt-2 flex-nowrap" > 
+                                        <a href="#" class="d-block text-decoration-none border-bottom w-100 pb-2" style="color:#2a303b; font-size:1.2rem;"> Arts </a> 
+                                    </div>
+    
+                                    <div class="d-flex p-0 pt-2 flex-nowrap" > 
+                                        <a href="#" class="d-block text-decoration-none border-bottom w-100 pb-2" style="color:#2a303b; font-size:1.2rem;"> Scènes </a> 
+                                    </div>
+        
+                                </div>
+                            
+                                <div class="d-none d-sm-flex flex-fill">
+                                    
+                                    <div class="w-100 p-0 mx-auto row">
+
+                                        <div class="col-6 col-lg-3 p-0 px-3 mx-auto ">
+
+                                            <img class="image-filler w-100 mt-2 mb-1" />
+                                            <a class="title-filler h6 px-2">CULTURE <br> </a>
+
+                                        </div>
+                                        
+                                        <div class="col-6 col-lg-3 p-0 px-3 mx-auto ">
+                                            
+                                            <img class="image-filler w-100 mt-2 mb-1" />
+                                            <a class="title-filler h6 px-2">LE MODE DES LIVRES <br> </a>
+
+                                        </div>
+                                        
+                                        <div class="col-6 col-lg-3 p-0 px-3 mx-auto ">
+                                            
+                                            <img class="image-filler w-100 mt-2 mb-1" />
+                                            <a class="title-filler h6 px-2">CULTURE <br> </a>
+
+                                        </div>
+                                        
+                                        <div class="col-6 col-lg-3 p-0 px-3 mx-auto">
+                                            
+                                            <img class="image-filler w-100 mt-2 mb-1" />
+                                            <a class="title-filler h6 px-2">CULTURE <br> </a>
+
+                                        </div>
+
+                                    </div>
+
+                                </div>
+    
+                            </div>
+    
+                        </div>
+    
+                        <div id="LeGoutDuMondeMenu" class="my-dropdown-menu d-none my-0">
+                                    
+                            <div class="d-flex">
+    
+                                <div class="d-flex flex-column flex-shrink-0 flex-grow-1 dropdown-list">
+                                    
+                                    <div class="d-flex p-0 pt-2 flex-nowrap" > 
+                                        <a href="#" class="d-block text-uppercase text-decoration-none border-bottom w-100 pb-2" style="color:#2a303b; font-size:1.2rem;"> Le Goût du monde </a> 
+                                    </div>
+    
+                                    <div class="d-flex p-0 pt-2 flex-nowrap" > 
+                                        <a href="#" class="d-block text-decoration-none border-bottom w-100 pb-2" style="color:#2a303b; font-size:1.2rem;"> Le Monde passe à table </a> 
+                                    </div>
+    
+                                    <div class="d-flex p-0 pt-2 flex-nowrap" > 
+                                        <a href="#" class="d-block text-decoration-none border-bottom w-100 pb-2" style="color:#2a303b; font-size:1.2rem;"> Voyage </a> 
+                                    </div>
+    
+                                    <div class="d-flex p-0 pt-2 flex-nowrap" > 
+                                        <a href="#" class="d-block text-decoration-none border-bottom w-100 pb-2" style="color:#2a303b; font-size:1.2rem;"> Design & déco </a> 
+                                    </div>
+    
+                                    <div class="d-flex p-0 pt-2 flex-nowrap" > 
+                                        <a href="#" class="d-block text-decoration-none border-bottom w-100 pb-2" style="color:#2a303b; font-size:1.2rem;"> Mode </a> 
+                                    </div>
+    
+                                    <div class="d-flex p-0 pt-2 flex-nowrap" > 
+                                        <a href="#" class="d-block text-decoration-none border-bottom w-100 pb-2" style="color:#2a303b; font-size:1.2rem;"> Beauté </a> 
+                                    </div>
+    
+                                    <div class="d-flex p-0 pt-2 flex-nowrap" > 
+                                        <a href="#" class="d-block text-decoration-none border-bottom w-100 pb-2" style="color:#2a303b; font-size:1.2rem;"> Horlogerie & Joaillerie </a> 
+                                    </div>
+        
+                                </div>
+                            
+                                <div class="d-none d-sm-flex flex-fill">
+                                    
+                                    <div class="w-100 p-0 mx-auto row">
+
+                                        <div class="col-6 col-lg-3 p-0 px-3 mx-auto ">
+
+                                            <img class="image-filler w-100 mt-2 mb-1" />
+                                            <a class="title-filler h6 px-2">LES RECETTES <br> </a>
+
+                                        </div>
+                                        
+                                        <div class="col-6 col-lg-3 p-0 px-3 mx-auto ">
+                                            
+                                            <img class="image-filler w-100 mt-2 mb-1" />
+                                            <a class="title-filler h6 px-2">LE GOUT DU MONDE <br> </a>
+
+                                        </div>
+                                        
+                                        <div class="col-6 col-lg-3 p-0 px-3 mx-auto ">
+                                            
+                                            <img class="image-filler w-100 mt-2 mb-1" />
+                                            <a class="title-filler h6 px-2">LE GOUT DU MONDE <br> </a>
+
+                                        </div>
+                                        
+                                        <div class="col-6 col-lg-3 p-0 px-3 mx-auto">
+                                            
+                                            <img class="image-filler w-100 mt-2 mb-1" />
+                                            <a class="title-filler h6 px-2">CHRONIQUE <br> </a>
+
+                                        </div>
+
+                                    </div>
+
+                                </div>
+    
+                            </div>
+    
+                        </div>
+    
+                        <div id="ServicesMenu" class="my-dropdown-menu d-none my-0">
+
+                            <div class="row w-100 p-0 mx-auto">
+
+                                <div class="col-12 col-md-6 px-3 mx-auto flex-grow-0">
+                    
+                                    <div class="d-flex flex-column justify-content-start align-items-start mb-3">
+
+                                        <div class="col-12 text-uppercase h5 p-0 mb-3 border-bottom flex-grow-0"> Services Le Monde </div>  
+                                                
+                                        <div class="row p-0 ps-3">
+
+                                            <div class="col-12 col-md-4 p-0 pe-4 flex-shrink-0 flex-grow-0">
+                                                <a>Boutique Le Monde</a> <br>
+                                                <a>Les ateliers du Monde</a> <br>
+                                                <a>Mémorable : améliorer sa culture générale</a> 
+                                            </div>
+                                            
+                                            <div class="col-12 col-md-4 p-0 pe-4 flex-shrink-0 flex-grow-0">
+                                                <a>Mots croisés / Sudokus</a> <br>
+                                                <a>Guides d’achat</a> <br>
+                                                <a>Réutiliser nos contenus</a> 
+                                            </div>
+                                            
+                                            <div class="col-12 col-md-4 p-0 flex-shrink-0 flex-grow-0">
+                                                <a>Newsletters</a> 
+                                            </div>
+                                        
+                                        </div>
+
+                                    </div>
+
+                                </div>
+
+                                <div class="col-12 col-md-6 px-3 mx-auto flex-grow-0">
+
+                                    <div class="d-flex flex-column justify-content-start align-items-start mb-3">
+
+                                        <div class="col-12 text-uppercase h5 p-0 mb-3 border-bottom flex-grow-0"> Services partenaires </div>  
+                                        
+                                        <div class="row p-0 ps-3">
+
+                                            <div class="col-12 col-md-4 p-0 pe-4 flex-shrink-0 flex-grow-0">
+                                                <a>Annonces légales</a> <br>
+                                                <a>Paroles de chansons</a> <br>
+                                                <a>Jardinage</a>
+                                            </div>
+                                            
+                                            <div class="col-12 col-md-4 p-0 pe-4 flex-shrink-0 flex-grow-0">
+                                                <a>Cours d’anglais</a> <br>
+                                                <a>Cours d’italien</a> <br>
+                                                <a>Cours d’Allemand</a>
+                                            </div>
+                                            
+                                            <div class="col-12 col-md-4 p-0 flex-shrink-0 flex-grow-0">
+                                                <a>Jeux gratuits d’arcade</a> <br>
+                                                <a>Solitaire gratuit en ligne</a>
+                                            </div>                    
+                                            
+                                        </div>
+
+                                    </div>
+
+                                </div>
+
+
+                                <div class="col-12 col-md-6 px-3 mx-auto flex-grow-0">
+
+                                    <div class="d-flex flex-column justify-content-start align-items-start mb-3">
+
+                                        <div class="col-12 text-uppercase h5 p-0 mb-3 border-bottom flex-grow-0"> Service Codes Promo </div>  
+                                        
+                                        <div class="row p-0 ps-3">
+
+                                            <div class="col-12 col-md-6 p-0 pe-4 flex-shrink-0 flex-grow-0">
+                                                <a>Codes Promo</a> <br>
+                                                <a>Black Friday</a> <br>
+                                                <a>Codes Promo Amazon</a> <br>
+                                                <a>Codes Promo BoohooMan</a> <br>
+                                                <a>Codes Promo Ebay</a> 
+                                            </div>
+                                            
+                                            <div class="col-12 col-md-6 p-0 flex-shrink-0 flex-grow-0">
+                                                <a>Codes Promo Asos</a> <br>
+                                                <a>Codes Promo Pandora</a> <br>
+                                                <a>Codes Promo Cdiscount</a> <br>
+                                                <a>Codes Promo Uber Eats</a> <br>
+                                                <a>Codes Promo NordVPN</a> 
+                                            </div>               
+
+                                        </div>
+
+                                    </div>
+
+                                </div>
+
+
+                                <div class="col-12 col-md-6 px-3 mx-auto flex-grow-0">
+
+                                    <div class="d-flex flex-column justify-content-start align-items-start mb-3">
+
+                                        <div class="col-12 text-uppercase h5 p-0 mb-3 border-bottom flex-grow-0"> Services partenaires </div>  
+                                        
+                                        <div class="row p-0 ps-3">
+
+                                            <div class="col-12 p-0 pe-4 flex-shrink-0 flex-grow-0">
+                                                <a>Prêts pour demain</a> <br>
+                                                <a>Découvrir Québec</a> <br>
+                                                <a>Les apports du numérique</a> <br>
+                                                <a>Dubrovnik Riviera, la beauté à chaque pas</a> <br>
+                                                <a>La parentalité numérique</a> <br>
+                                                <a>Club Med, des séjours tout compris d’exception</a> <br>
+                                            </div>    
+                                            
+                                        </div>
+
+                                    </div>
+
+                                </div>
+
+                            </div>
+
+                            <a> Gestion des cookies </a>
+                    
+                        </div>
+    
+                    </div>
+
+                </div>
+                
+            </div>
+
+        </header>
+
+        <div id="LastNews" class="d-none d-lg-block d-xl-block z-1">
+                
+            <div id="LastNewsContainer" class="d-flex flex-row mx-auto my-0 p-0 h-auto">
+                
+                <ul class="p-0 pt-3 d-flex flex-row mx-auto my-0 overflow-hidden mw-100">
+                    
+                    <li class="h-auto w-25 d-flex flex-col align-items-start mx-auto my-0">
+                        
+                        <a class="pt-0 px-3 pb-3 text-decoration-none">
+                            
+                            <p> 
+                                <span class="time">15:45</span> <br>
+                                UE : vote pour la sortie d’un traité protégeant les énergies fossiles
+                            </p>
+                    
+                        </a>
+                    
+                    </li>
+                    <li class="h-auto w-25 d-flex flex-col align-items-start mx-auto my-0">
+                        
+                        <a class="pt-0 px-3 pb-3 text-decoration-none">
+                            
+                            <p>
+                                <span class="time">15:32</span> <br>
+                                L’ONU crée un fonds pour aider les réfugiés face aux chocs climatiques
+                            </p>
+                            
+                        </a>
+                        
+                    </li>
+                    <li class="h-auto w-25 d-flex flex-col align-items-start mx-auto my-0">
+                        
+                        <a class="pt-0 px-3 pb-3 text-decoration-none">
+                            
+                            <p>
+                                <span class="time">15:23</span> <br>
+                                Droits des travailleurs des plates-formes: les eurodéputés valident la loi
+                            </p>
+                            
+                        </a>
+                        
+                    </li>
+                    <li class="h-auto w-25 d-flex flex-col align-items-start mx-auto my-0">
+                        
+                        <a class="pt-0 px-3 pb-3 text-decoration-none">
+                            
+                            <p>
+                                <span class="time">15:05</span> <br>
+                                Un lien entre le diabète et certains émulsifiants, selon une étude
+                            </p>
+                            
+                        </a>
+                        
+                    </li>
+                    <li class="h-auto w-25 d-flex flex-col align-items-start mx-auto my-0">
+                        
+                        <a class="pt-0 px-3 pb-3 text-decoration-none">
+                            
+                            <p> 
+                                <span class="time">Alerte</span> <br>
+                                Enquête | Les dérapages financiers du Grand Prix de formule 1 de Christian Estrosi
+                            </p>
+                            
+                        </a>
+                        
+                    </li>
+                    
+                </ul>
+                
+                <div class="d-flex align-items-start pl-0 pt-3 justify-content-center w-25 text-left">
+                    
+                    <a class="text-decoration-none">
+                        
+                        Voir plus
+                        
+                    </a>
+                    
+                </div>
+            
+            </div>
+
+        </div>
+    
+        <div id="Main" class="mx-auto p-4" style="z-index: 1;">
+
+            <!-- first news -->
+            <div class="mx-auto row border-bottom">
+                
+                <div class="col-12 col-lg-8 px-1 mx-auto row bottom-border">
+                
+                    <div class="col-lg-8 px-1 mx-auto row border-bottom">
+                        
+                        <a class="title-filler h3 px-2"></a>
+
+                        <figure class="w-100">
+
+                            <img class="image-filler w-100 mt-2 mb-1" />
+                            <figcaption></figcaption>
+
+                        </figure>
+
+                        <p class="article-filler"></p>
+
+                        <a class="col-12 col-lg-6 title-filler h6 mt-4 pb-4"> </a>
+
+                        <a class="col-12 col-lg-6 title-filler h6 mt-4 pb-4"> </a>
+
+                    </div>
+
+                    <div class="col-12 col-lg-4 px-1 mx-auto row border-bottom">
+
+                        <div class="col-12 px-1 mx-auto pb-4 border-bottom">
+                            
+                            <figure class="small-image w-100">
+    
+                                <img class="image-filler w-100 mb-1" />
+                                <figcaption class="d-none d-lg-block"></figcaption>
+    
+                            </figure>
+
+                            <a class="title-filler h5"></a>
+
+                        </div>
+
+                        <div class="col-12 px-1 mx-auto mt-4 pb-4">
+                            
+                            <figure class="small-image w-100">
+    
+                                <img class="image-filler w-100 mt-2 mb-1" />
+                                <figcaption class="d-none d-lg-block"></figcaption>
+    
+                            </figure>
+
+                            <a class="title-filler h5"></a>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="col-12 px-1 mx-auto row">
+                        <div class="col-12 col-lg-4 px-3 mx-auto mt-4 pb-4 border-bottom">
+
+                            <figure class="small-image w-100">
+    
+                                <img class="image-filler w-100 mt-2 mb-1" />
+                                <figcaption class="d-none d-lg-block"></figcaption>
+    
+                            </figure>
+
+                            <a class="title-filler h6"></a>
+
+                            <p class="article-filler"></p>
+                        
+                        </div>
+
+                        <div class="col-12 col-lg-4 px-3 mx-auto mt-4 pb-4 border-bottom">
+
+                            <figure class="small-image w-100">
+    
+                                <img class="image-filler w-100 mt-2 mb-1" />
+                                <figcaption class="d-none d-lg-block"></figcaption>
+    
+                            </figure>
+
+                            <a class="title-filler h6"></a>
+
+                            <p class="article-filler"></p>
+
+                        </div>
+
+                        <div class="col-12 col-lg-4 px-3 mx-auto mt-4 pb-4 border-bottom">
+
+                            <figure class="small-image w-100">
+    
+                                <img class="image-filler w-100 mt-2 mb-1" />
+                                <figcaption class="d-none d-lg-block"></figcaption>
+    
+                            </figure>
+
+                            <a class="title-filler h6"></a>
+
+                            <p class="article-filler"></p>
+
+                        </div>
+                    
+                    </div>
+                
+                </div>
+                
+                <div class="col-12 col-lg-4 px-1 mx-auto">
+                    
+                    <div class="card rounded-0 w-100">
+
+                        <img id="ImageUnder" class="card-img-top image-filler img-fluid rounded-0 position-absolute" />
+
+                        <!-- spacer -->
+                        <div id="CentralImageTextSpacer"></div>
+
+                        <div id="TextOnTop" class="card-body p-2 text-center mx-auto">
+
+                            <a class="h6 text-decoration-none fw-bold small-text-title" style="color:#2a303b;"> LOREM TITLE </a> 
+                            <br>
+
+                            <br>
+
+                            <div class="title-filler pb-3">
+                                
+                            </div>
+                            
+                            <div class="article-filler">
+                                
+                            </div>
+                        
+                        </div>
+
+                    </div>
+
+                    <div class="w-100 mt-4 p-3 small-text-filler">
+                        <a class="h6 text-decoration-none fw-bold small-text-title" style="color:#024771;"> LOREM PHOTOS </a> 
+                        <br>
+                        <a class="h6 text-decoration-none fw-bold small-text-title" style="color:#2a303b;"> LOREM PHOTOS TITLE </a> 
+                        <br>
+                    </div>
+
+                </div>
+
+                <div class="col-12 col-lg-8 px-1 mx-auto row">
+                    <div class="col-12 col-lg-6 px-1 mx-auto mt-4 pb-4 border-bottom">
+
+                        <a class="title-filler h6 ">
+                            <img class="img-fluid float-end right-0 image-filler mt-2 mb-1" style="width: 100px;"/>
+                        </a>
+                    
+                    </div>
+
+                    <div class="col-12 col-lg-6 mt-4 pb-4 border-bottom">
+
+                        <a class="title-filler h6 ">
+                            <img class="img-fluid float-end right-0 image-filler mt-2 mb-1" style="width: 100px;"/>
+                        </a>
+
+                    </div>
+
+                    <div class="col-12 col-lg-6 mt-4 pb-4 border-bottom">
+
+                        <a class="title-filler h6 ">
+                            <img class="img-fluid float-end right-0 image-filler mt-2 mb-1" style="width: 100px;"/>
+                        </a>
+                    
+                    </div>
+
+                    <div class="col-12 col-lg-6 mt-4 pb-4 border-bottom">
+
+                        <a class="title-filler h6 ">
+                            <img class="img-fluid float-end right-0 image-filler mt-2 mb-1" style="width: 100px;"/>
+                        </a>
+
+                    </div>
+
+                    <div class="col-12 col-lg-6 mt-4 pb-4 border-bottom">
+
+                        <a class="title-filler h6 ">
+                        </a>
+
+                    </div>
+
+                    <div class="col-12 col-lg-6 mt-4 pb-4 border-bottom">
+
+                        <a class="title-filler h6 ">
+                        </a>
+                   
+                    </div>
+
+                    <div class="col-12 col-lg-6 mt-4 pb-4 border-bottom">
+
+                        <a class="title-filler h6 ">
+                        </a>
+
+                    </div>
+
+                    <div class="col-12 col-lg-6 mt-4 pb-4 border-bottom">
+
+                        <a class="title-filler h6 ">
+                        </a>
+
+                    </div>
+
+                    <div class="col-12 col-lg-6 mt-4 pb-4 border-bottom">
+
+                        <a class="title-filler h6 ">
+                        </a>
+
+                    </div>
+
+                    <div class="col-12 col-lg-6 mt-4 pb-4 border-bottom">
+
+                        <a class="title-filler h6 ">
+                        </a>
+
+                    </div>
+
+                    <div class="col-12 col-lg-6 mt-4 pb-4 ">
+
+                        <a class="title-filler h6 ">
+                        </a>
+
+                    </div>
+
+                    <div class="col-12 col-lg-6 mt-4 pb-4 ">
+
+                        <a class="title-filler h6 ">
+                        </a>
+
+                    </div>
+                
+                </div>
+
+                <!--empty col-->
+                <div class="col-0 col-lg-4"></div>
+
+            
+            </div>
+
+            <!-- selection de la redaction -->
+            <div class="mx-auto row bottom-border">
+            
+                <div class="col-12 p-0 h4 mt-5 mb-2"> Sélection de la rédaction </div>
+
+                <div class="col-12 col-lg-4 px-2">
+                    
+                    <div class="card rounded-0 w-100">
+
+                        <img id="ImageUnder" class="card-img-top image-filler img-fluid rounded-0 position-absolute" />
+
+                        <!-- spacer -->
+                        <div id="CentralImageTextSpacer"></div>
+
+                        <div id="TextOnTop" class="card-body p-2 text-center mx-auto">
+
+                            <a class="h6 text-decoration-none fw-bold small-text-title" style="color:#2a303b;"> LOREM TITLE </a> 
+                            <br>
+
+                            <br>
+
+                            <div class="title-filler pb-3">
+                                
+                            </div>
+                            
+                            <div class="article-filler">
+                                
+                            </div>
+                        
+                        </div>
+
+                    </div>
+
+                </div>
+
+                <div class="col-12 col-lg-4 px-2">
+                    
+                    <div class="card rounded-0 w-100">
+
+                        <img id="ImageUnder" class="card-img-top image-filler img-fluid rounded-0 position-absolute" />
+
+                        <!-- spacer -->
+                        <div id="CentralImageTextSpacer"></div>
+
+                        <div id="TextOnTop" class="card-body p-2 text-center mx-auto">
+
+                            <a class="h6 text-decoration-none fw-bold small-text-title" style="color:#2a303b;"> LOREM TITLE </a> 
+                            <br>
+
+                            <br>
+
+                            <div class="title-filler pb-3">
+                                
+                            </div>
+                            
+                            <div class="article-filler">
+                                
+                            </div>
+                        
+                        </div>
+
+                    </div>
+
+                </div>
+
+                <div class="col-12 col-lg-4 px-2">
+                    
+                    <div class="card rounded-0 w-100">
+
+                        <img id="ImageUnder" class="card-img-top image-filler img-fluid rounded-0 position-absolute" />
+
+                        <!-- spacer -->
+                        <div id="CentralImageTextSpacer"></div>
+
+                        <div id="TextOnTop" class="card-body p-2 text-center mx-auto">
+
+                            <a class="h6 text-decoration-none fw-bold small-text-title" style="color:#2a303b;"> LOREM TITLE </a> 
+                            <br>
+
+                            <br>
+
+                            <div class="title-filler pb-3">
+                                
+                            </div>
+                            
+                            <div class="article-filler">
+                                
+                            </div>
+                        
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+    
+
+        <footer style="background-color: #2a303b; color:#ffffff;">
+
+            <div id="FooterContent" class="mx-auto py-5">
+
+                <div class="row p-0 mx-auto">
+                    <div class="col-9 p-0 d-flex flex-column flex-wrap" style="max-height:36.5rem;">
+                        <div class="col-4 p-0" style="font-size: 0.8rem;">
+                            <h6 class="text-uppercase">Services Le Monde</h6>
+                            <ul class="ps-3 mb-4">
+                                <li class="mb-2">
+                                    <a href="#" class="text-decoration-none" style="color:#d0d3d8;">Boutique Le Monde</a>
+                                </li>                                
+                                <li class="mb-2">
+                                    <a href="#" class="text-decoration-none" style="color:#d0d3d8;">Les ateliers du Monde</a>
+                                </li>
+                                <li class="mb-2">
+                                    <a href="#" class="text-decoration-none" style="color:#d0d3d8;">Mémorable : améliorer sa culture générale</a>
+                                </li>
+                                <li class="mb-2">
+                                    <a href="#" class="text-decoration-none" style="color:#d0d3d8;">Mots croisés</a>
+                                </li>
+                                <li class="mb-2">
+                                    <a href="#" class="text-decoration-none" style="color:#d0d3d8;">Sudokus</a>
+                                </li>
+                                <li class="mb-2">
+                                    <a href="#" class="text-decoration-none" style="color:#d0d3d8;">Résultats élections</a>
+                                </li>
+                                <li class="mb-2">
+                                    <a href="#" class="text-decoration-none" style="color:#d0d3d8;">Education</a>
+                                </li>
+                                <li class="mb-2">
+                                    <a href="#" class="text-decoration-none" style="color:#d0d3d8;">Gastronomie</a>
+                                </li>
+                                <li class="mb-2">
+                                    <a href="#" class="text-decoration-none" style="color:#d0d3d8;">Le Monde Syndication</a>
+                                </li>
+                            </ul>
+                        </div>
+
+                        <div class="col-4 p-0" style="font-size: 0.8rem;">
+                            <h6 class="text-uppercase">Guides d'achat Le Monde</h6>
+                            <ul class="ps-3 mb-4">
+                                <li class="mb-2">
+                                    <a href="#" class="text-decoration-none" style="color:#d0d3d8;">Les meilleures imprimantes laser</a>
+                                </li>                                
+                                <li class="mb-2">
+                                    <a href="#" class="text-decoration-none" style="color:#d0d3d8;">Les meilleurs aspirateurs robots</a>
+                                </li>
+                                <li class="mb-2">
+                                    <a href="#" class="text-decoration-none" style="color:#d0d3d8;">Jeux de société pour adultes</a>
+                                </li>
+                            </ul>
+                        </div>
+
+                        <div class="col-4 p-0" style="font-size: 0.8rem;">
+                            <h6 class="text-uppercase">Codes promo</h6>
+                            <ul class="ps-3 mb-4">
+                                <li class="mb-2">
+                                    <a href="#" class="text-decoration-none" style="color:#d0d3d8;">Codes promo</a>
+                                </li>                                
+                                <li class="mb-2">
+                                    <a href="#" class="text-decoration-none" style="color:#d0d3d8;">Black Friday</a>
+                                </li>
+                                <li class="mb-2">
+                                    <a href="#" class="text-decoration-none" style="color:#d0d3d8;">Soldes</a>
+                                </li>
+                            </ul>
+                        </div>
+
+                        <div class="col-4 p-0" style="font-size: 0.8rem;">
+                            <h6 class="text-uppercase">Le Monde à l'international</h6>
+                            <ul class="ps-3 mb-4">
+                                <li class="mb-2">
+                                    <a href="#" class="text-decoration-none" style="color:#d0d3d8;">Le Monde in English</a>
+                                </li>                                
+                                <li class="mb-2">
+                                    <a href="#" class="text-decoration-none" style="color:#d0d3d8;">Algérie</a>
+                                </li>
+                                <li class="mb-2">
+                                    <a href="#" class="text-decoration-none" style="color:#d0d3d8;">Belgique</a>
+                                </li>
+                                <li class="mb-2">
+                                    <a href="#" class="text-decoration-none" style="color:#d0d3d8;">Canada</a>
+                                </li>
+                                <li class="mb-2">
+                                    <a href="#" class="text-decoration-none" style="color:#d0d3d8;">Côte d'Ivoire</a>
+                                </li>
+                                <li class="mb-2">
+                                    <a href="#" class="text-decoration-none" style="color:#d0d3d8;">Mali</a>
+                                </li>
+                                <li class="mb-2">
+                                    <a href="#" class="text-decoration-none" style="color:#d0d3d8;">Maroc</a>
+                                </li>
+                                <li class="mb-2">
+                                    <a href="#" class="text-decoration-none" style="color:#d0d3d8;">Sénégal</a>
+                                </li>
+                                <li class="mb-2">
+                                    <a href="#" class="text-decoration-none" style="color:#d0d3d8;">Suisse</a>
+                                </li>
+                                <li class="mb-2">
+                                    <a href="#" class="text-decoration-none" style="color:#d0d3d8;">Tunisie</a>
+                                </li>
+                            </ul>
+                        </div>
+
+                        <div class="col-4 p-0" style="font-size: 0.8rem;">
+                            <h6 class="text-uppercase">Services Partenaires</h6>
+                            <ul class="ps-3 mb-4">
+                                <li class="mb-2">
+                                    <a href="#" class="text-decoration-none" style="color:#d0d3d8;">Nos partenaires</a>
+                                </li>
+                                <li class="mb-2">
+                                    <a href="#" class="text-decoration-none" style="color:#d0d3d8;">Découvrir le jardinage</a>
+                                </li>
+                                <li class="mb-2">
+                                    <a href="#" class="text-decoration-none" style="color:#d0d3d8;">Hits du moment</a>
+                                </li>
+                                <li class="mb-2">
+                                    <a href="#" class="text-decoration-none" style="color:#d0d3d8;">Mahjong Solitaire</a>
+                                </li>
+                                <li class="mb-2">
+                                    <a href="#" class="text-decoration-none" style="color:#d0d3d8;">Jeux gratuits Mahjong</a>
+                                </li>
+                                <li class="mb-2">
+                                    <a href="#" class="text-decoration-none" style="color:#d0d3d8;">Bubble Shooter</a>
+                                </li>
+                                <li class="mb-2">
+                                    <a href="#" class="text-decoration-none" style="color:#d0d3d8;">Consulter les annonces légales</a>
+                                </li>
+                            </ul>
+                        </div>
+
+                        <div class="col-4 p-0" style="font-size: 0.8rem;">
+                        <h6 class="text-uppercase">Sites du groupe</h6>
+                            <ul class="ps-3 mb-4">
+                                <li class="mb-2">
+                                    <a href="#" class="text-decoration-none" style="color:#d0d3d8;">Le Monde Evènements</a>
+                                </li>                                
+                                <li class="mb-2">
+                                    <a href="#" class="text-decoration-none" style="color:#d0d3d8;">Courrier International</a>
+                                </li>
+                                <li class="mb-2">
+                                    <a href="#" class="text-decoration-none" style="color:#d0d3d8;">Télérama</a>
+                                </li>
+                                <li class="mb-2">
+                                    <a href="#" class="text-decoration-none" style="color:#d0d3d8;">La Vie</a>
+                                </li>
+                                <li class="mb-2">
+                                    <a href="#" class="text-decoration-none" style="color:#d0d3d8;">Le HuffPost</a>
+                                </li>
+                                <li class="mb-2">
+                                    <a href="#" class="text-decoration-none" style="color:#d0d3d8;">Le Nouvel Obs</a>
+                                </li>
+                                <li class="mb-2">
+                                    <a href="#" class="text-decoration-none" style="color:#d0d3d8;">Le Monde diplomatique</a>
+                                </li>                                
+                                <li class="mb-2">
+                                    <a href="#" class="text-decoration-none" style="color:#d0d3d8;">La société des lecteurs du Monde</a>
+                                </li>
+                                <li class="mb-2">
+                                    <a href="#" class="text-decoration-none" style="color:#d0d3d8;">Talents</a>
+                                </li>
+                                <li class="mb-2">
+                                    <a href="#" class="text-decoration-none" style="color:#d0d3d8;">Source Sûre</a>
+                                </li>
+                                <li class="mb-2">
+                                    <a href="#" class="text-decoration-none" style="color:#d0d3d8;">Le Club de l’économie</a>
+                                </li>
+                                <li class="mb-2">
+                                    <a href="#" class="text-decoration-none" style="color:#d0d3d8;">M Publicité</a>
+                                </li>
+                                <li class="mb-2">
+                                    <a href="#" class="text-decoration-none" style="color:#d0d3d8;">Le carnet du Monde</a>
+                                </li>
+                            </ul>
+
+                        </div>
+                    </div>
+                
+                    <div class="col-3 row p-0" >
+                        <h5>Section</h5>
+                        <ul class="nav flex-column">
+                        <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-muted">Home</a></li>
+                        <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-muted">Features</a></li>
+                        <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-muted">Pricing</a></li>
+                        <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-muted">FAQs</a></li>
+                        <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-muted">About</a></li>
+                        </ul>
+                    </div>
+                </div>
+            
+                <div class="d-flex flex-column flex-sm-row justify-content-between py-4 my-4 border-top" >
+                <p>© 2022 Company, Inc. All rights reserved.</p>
+                <ul class="list-unstyled d-flex">
+                    <li class="ms-3"><a class="link-dark" href="#"><svg class="bi" width="24" height="24"><use xlink:href="#twitter"></use></svg></a></li>
+                    <li class="ms-3"><a class="link-dark" href="#"><svg class="bi" width="24" height="24"><use xlink:href="#instagram"></use></svg></a></li>
+                    <li class="ms-3"><a class="link-dark" href="#"><svg class="bi" width="24" height="24"><use xlink:href="#facebook"></use></svg></a></li>
+                </ul>
+                </div>
+
+            </div>
+
+        </footer>
+        
+            
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
+        <script src="js/postscript.js"></script>
+        
+    </body>
+    
+</html>
