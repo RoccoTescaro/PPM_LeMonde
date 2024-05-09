@@ -174,7 +174,7 @@ header
 
     #MenuList
     {
-      
+        overflow-x: visible;      
         border-bottom-width: 0 !important;
         max-width: 72.6rem !important;
         justify-content: space-between;
