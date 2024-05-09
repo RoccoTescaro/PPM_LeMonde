@@ -564,3 +564,11 @@ figcaption:after
     min-width:16rem; 
     max-width: 100%;
 }
+
+.account-image
+{
+    border-radius: 50%;
+    width: 3rem;
+    height: 3rem;
+    content: url('https://placehold.co/200x200');
+}
