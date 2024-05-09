@@ -164,6 +164,7 @@ header
     {
         border-top: 3px solid #026b9c;
         justify-content: center;
+        overflow-x: visible;      
     }
 
     #Home
