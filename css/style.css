@@ -20,6 +20,11 @@ header
     color: #2a303b;
 }
 
+a:hover
+{
+    cursor:pointer !important;
+}
+
 #NavList
 {
     cursor: pointer;
@@ -571,4 +576,22 @@ figcaption:after
     width: 3rem;
     height: 3rem;
     content: url('https://placehold.co/200x200');
+}
+
+.number-numbered-article
+{
+    font-size: 4rem; 
+    line-height: 4rem; 
+    font-family: "Helvetica Neue", Helvetica, Arial, Roboto, sans-serif;
+    color:#2a303b;
+}
+
+.numbered-article
+{
+    font-size: 1.13rem; 
+    font-weight: 400; 
+    letter-spacing: -.02rem; 
+    line-height: 1.33; 
+    background-color: #ffffff;
+    color:#2a303b;
 }
