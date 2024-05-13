@@ -41,7 +41,7 @@ $(document).ready(function()
           {
           
             //block scrolling
-            $('body').addClass('overflow-hidden');
+            //$('body').addClass('overflow-hidden');
             $('#DropDownMenu').addClass('my-shadow');
             $('#' + menuName + 'MenuBtn').parent().addClass('my-dropdown-menu-active');
           
@@ -49,7 +49,7 @@ $(document).ready(function()
           {
             
             //unblock scrolling
-            $('body').removeClass('overflow-hidden');
+            //$('body').removeClass('overflow-hidden');
             $('#DropDownMenu').removeClass('my-shadow');
             $('#' + menuName + 'MenuBtn').parent().removeClass('my-dropdown-menu-active');
           
