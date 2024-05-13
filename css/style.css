@@ -61,6 +61,16 @@ a:hover
     user-select: none;
 }
 
+#Main
+{
+    position: relative;
+    background-color: #ffffff;
+    color: #2a303b;
+    max-width: 41.83rem;
+    transition: .2s;
+    margin: 13.86rem auto 0 auto !important;
+}
+
 
 .border-bottom
 {
@@ -200,7 +210,7 @@ a:hover
     {
         overflow-x: visible !important;      
         border-bottom-width: 0 !important;
-        max-width: 72.6rem !important;
+        max-width: 100% !important;
         justify-content: space-between;
         width: 72.6rem !important;
     }
@@ -224,7 +234,7 @@ a:hover
     .navbar-nav
     {
         justify-content: space-between;
-        max-width: 72.6rem;   
+        max-width: 100%;  
         margin-left: auto;
         margin-right: auto; 
     }
@@ -252,6 +262,11 @@ a:hover
     .justify-content-center-lg
     {
         justify-content: center !important;
+    }
+
+    #Main
+    {
+        max-width: 63rem;
     }
 }
 
@@ -366,15 +381,6 @@ a:hover
     text-decoration: underline !important;
 }
 
-#Main
-{
-    position: relative;
-    background-color: #ffffff;
-    color: #2a303b;
-    max-width: 63rem;
-    transition: .2s;
-    margin: 13.86rem auto 0 auto !important;
-}
 
 #DropDownMenu
 {
